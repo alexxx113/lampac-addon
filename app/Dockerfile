@@ -31,6 +31,6 @@ ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
 
 COPY run.sh /home/
-RUN chmod a+x /run.sh
+RUN chmod a+x /home/run.sh
 
 CMD [ "/run.sh" ]
