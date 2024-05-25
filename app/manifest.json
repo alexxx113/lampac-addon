@@ -6,7 +6,7 @@
   "license": "MIT",
   "url": "https://github.com/alexxx113/lampac-addon",
   "namespace": "lampac",
-  "repository": "https://github.com/alexxx113/lampac-addon",
+  "repository": "https://github.com/alexxx113/lampac-addon/tree/main/app",
   "categories": [
     "integration"
   ],
