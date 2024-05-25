@@ -15,7 +15,7 @@ RUN curl -fSL -k -o dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/aspnetc
     && tar -oxzf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz
 
-# Изменения для Home Assistant addon:
+
 RUN mkdir -p /config/lampac
 COPY --chown=hass:hass . /config/lampac
 
@@ -25,11 +25,11 @@ RUN curl -L -k -o publish.zip https://github.com/immisterio/Lampac/releases/late
     && mv Lampac.runtimeconfig.json /config/lampac
     && sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' /config/lampac/Lampac.runtimeconfig.json 
 
-# ... (оставшийся код) ...
+
 
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
-# Изменения для Home Assistant addon:
+
 COPY --chown=hass:hass init.conf /config/lampac
 
 VOLUME /config/lampac
