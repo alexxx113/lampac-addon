@@ -17,7 +17,11 @@ RUN curl -fSL -k -o dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/aspnetc
 
 
 RUN mkdir -p /config/lampac
-COPY --chown=hass:hass . /config/lampac
+#COPY --chown=hass:hass . /config/lampac
+COPY /config/lampac
+#COPY /alarmserver/* /
+#RUN chmod a+x /alarmserver-linux-raspberry
+
 
 RUN curl -L -k -o publish.zip https://github.com/immisterio/Lampac/releases/latest/download/publish.zip \
     && unzip -o publish.zip && rm -f publish.zip && rm -rf merchant \
@@ -27,6 +31,6 @@ RUN sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' /config
 
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
-COPY --chown=hass:hass init.conf /config/lampac
-
+#COPY --chown=hass:hass init.conf /config/lampac
+COPY init.conf /config/lampac
 VOLUME /config/lampac
