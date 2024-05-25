@@ -11,7 +11,7 @@
   ],
   "homeassistant": {
     "repositories": [
-      "https://github.com/alexxx113/lampac-addon/"
+      "https://github.com/immisterio/Lampac.git"
     ]
   },
   "docker_image": "immisterio/lampac",
