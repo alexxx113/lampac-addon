@@ -1,7 +1,7 @@
 name: "Lampac"
 description: "My first real add-on!"
 version: "1.0.0"
-slug: "example"
+slug: "lampac_hass"
 advanced: true
 arch:
   - aarch64
@@ -11,7 +11,7 @@ arch:
   - i386
 hassio_api: true
 hassio_role: manager  
-#ingress: true
+ingress: true
 init: false  
   
   
