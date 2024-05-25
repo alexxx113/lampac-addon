@@ -1,6 +1,7 @@
 FROM debian:12.5-slim
 
-EXPOSE 9118
+#EXPOSE 9118
+EXPOSE 9119
 WORKDIR /home
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl unzip sed chromium \
