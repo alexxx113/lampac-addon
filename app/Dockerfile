@@ -26,7 +26,7 @@ RUN mkdir -p torrserver && curl -L -k -o torrserver/TorrServer-linux https://git
     && chmod +x torrserver/TorrServer-linux
 
 RUN echo '{"puppeteer":{"executablePath":"/usr/bin/chromium"}}' > init.conf
-RUN cat /home/passwd
+#RUN cat /home/passwd
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
 
