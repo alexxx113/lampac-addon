@@ -29,6 +29,16 @@ RUN curl -L -k -o publish.zip https://github.com/immisterio/Lampac/releases/late
     && mv Lampac.runtimeconfig.json /config/lampac
 RUN sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' /config/lampac/Lampac.runtimeconfig.json 
 
+
+
+RUN curl -L -k -o minor.zip https://github.com/immisterio/Lampac/releases/latest/download/minor.zip && unzip -o minor.zip && rm -f minor.zip
+
+RUN mkdir -p torrserver && curl -L -k -o torrserver/TorrServer-linux https://github.com/YouROK/TorrServer/releases/latest/download/TorrServer-linux-amd64 \
+    && chmod +x torrserver/TorrServer-linux
+
+RUN echo '{"puppeteer":{"executablePath":"/usr/bin/chromium"}}' > init.conf
+
+
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
 #COPY --chown=hass:hass init.conf /config/lampac
