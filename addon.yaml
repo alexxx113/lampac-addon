@@ -5,7 +5,7 @@ description: Лампач - умное управление освещением
 # Определение имени вашего addon для Home Assistant
 slug: lampac
 # Укажите версию Docker-образа, который вы хотите использовать
-image: docker.io/immisterio/lampac:latest
+image: immisterio/lampac
 #  Описание полей, которые будут доступны в интерфейсе Home Assistant
 build:
     path: src/Dockerfile
