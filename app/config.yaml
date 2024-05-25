@@ -17,6 +17,6 @@ init: false
   
 startup: before
 ports:
-  9118/tcp: 9118
-  21/tcp: 21
+  9118/tcp: 9119
+  #21/tcp: 21
   #8000/tcp: 8000  
