@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Hikvision Add-ons
+url: "https://github.com/alexxx113/lampac-addon"
+maintainer: Pergola Fabio <pergola.fabio@gmail.com>
