@@ -3,7 +3,7 @@ FROM debian:12.5-slim
 EXPOSE 9119
 WORKDIR /home
 
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl unzip sed chromium \
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl unzip sed chromium nano \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN curl -L -k -o ffprobe.zip https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v6.1/ffprobe-6.1-linux-64.zip \
