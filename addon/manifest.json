@@ -1,0 +1,12 @@
+{
+  "name": "LAMPAC",
+  "description": "Addon for managing LAMPAC server",
+  "version": "1.0.0",
+  "author": "alexxx113",
+  "website": "https://github.com/immisterio/Lampac",
+  "icon": "icon.png",
+  "category": "Server",
+  "repo": "alexxx113/lampac-addon",
+  "image": "alexxx113/lampac-addon:latest",
+  "maintainer": "alexxx113"
+}
