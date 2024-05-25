@@ -1,0 +1,28 @@
+name: lampac
+version: 1.0.0
+# Ваше описание для addon
+description: Лампач - умное управление освещением.
+# Определение имени вашего addon для Home Assistant
+slug: lampac
+# Укажите версию Docker-образа, который вы хотите использовать
+image: immisterio/lampac:latest
+#  Описание полей, которые будут доступны в интерфейсе Home Assistant
+options:
+  # Пример опции, которая позволяет пользователю выбрать порт
+  port:
+    type: int
+    description: Port to listen on
+    default: 8080
+#  Определение дополнительных настроек для запуска вашего addon
+boot:
+  # Запуск addon во время старта Home Assistant
+  - "startup"
+#  Укажите порт, на котором addon будет доступен в Home Assistant
+host_port: 8080
+#  Определение ресурсов, которые использует addon
+resources:
+  #  Укажите, какие типы ресурсов нужны для работы addon
+  - "network" 
+#  Определение зависимостей, которые нужны для запуска вашего addon
+dependencies:
+  - "network"
