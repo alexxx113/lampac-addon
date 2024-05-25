@@ -30,7 +30,7 @@ RUN cat /home/
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
 
-COPY run.sh /data/
+COPY run.sh /home/
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
