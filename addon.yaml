@@ -7,6 +7,8 @@ slug: lampac
 # Укажите версию Docker-образа, который вы хотите использовать
 image: immisterio/lampac:latest
 #  Описание полей, которые будут доступны в интерфейсе Home Assistant
+build:
+    path: src/Dockerfile
 options:
   # Пример опции, которая позволяет пользователю выбрать порт
   port:
