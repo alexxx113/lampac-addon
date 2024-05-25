@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Home Assistant addon for Lampac",
   "author": "immisterio",
-  "repository": "https://github.com/immisterio/Lampac",
+  "repository": "https://github.com/alexxx113/lampac-addon",
   "dependencies": ["python3"],
   "config_flow": "config_flow.py",
   "docker_image": "immisterio/lampac",
   "options": [
     {
-      "name": "url",
+      "name": "https://github.com/alexxx113/lampac-addon",
       "type": "text",
       "description": "URL for Lampac server",
       "required": true
