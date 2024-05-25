@@ -6,7 +6,7 @@
   "repository": "https://github.com/immisterio/Lampac",
   "dependencies": ["python3"],
   "config_flow": "config_flow.py",
-  "docker_image": "immisterio/lampac:latest",
+  "docker_image": "immisterio/lampac",
   "options": [
     {
       "name": "url",
