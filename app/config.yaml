@@ -12,7 +12,7 @@ arch:
 hassio_api: true
 hassio_role: manager  
 ingress: true
-ingress_port: 9119
+#ingress_port: 9119
 init: false  
   
   
