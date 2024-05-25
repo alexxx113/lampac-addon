@@ -1,27 +1,20 @@
 {
   "name": "Lampac",
   "version": "1.0.0",
-  "description": "Addon for Lampac application",
-  "author": "immisterio",
-  "icon": "mdi:lamp",
-  "documentation": "https://github.com/immisterio/Lampac",
+  "description": "Lampac Addon for Home Assistant",
+  "author": "Your Name",
+  "license": "MIT",
+  "url": "https://github.com/alexxx113/lampac-addon",
+  "namespace": "lampac",
+  "repository": "https://github.com/alexxx113/lampac-addon",
   "categories": [
-    "server",
-    "network" 
+    "integration"
   ],
-  "homeassistant": {
-    "repositories": [
-      "https://github.com/immisterio/Lampac.git"
-    ]
-  },
-  "docker_image": "immisterio/lampac",
-  "network": {
-    "mode": "bridge"
-  },
-  "ports": {
-    "9118": {
-      "type": "tcp",
-      "description": "Port for Lampac application"
-    }
-  }
+  "dependencies": [],
+  "options": {},
+  "config_flow": false,
+  "documentation": "https://github.com/alexxx113/lampac-addon",
+  "icon": "mdi:lamp",
+  "services": [],
+  "startup": "manual"
 }
