@@ -13,9 +13,9 @@ RUN homeassistant-addon-installer --installer-path /config/install.sh \
     --addon-website "https://github.com/immisterio/Lampac" \
     --addon-icon "icon.png" \
     --addon-category "Server" \
-    --addon-repo "[ваш_username]/lampac-addon" \
-    --addon-image "[ваш_username]/lampac-addon:latest" \
-    --addon-maintainer "[ваш_username]"
+    --addon-repo "alexxx11/lampac-addon" \
+    --addon-image "alexxx11/lampac-addon:latest" \
+    --addon-maintainer "alexxx11"
 
 # Добавьте дополнительные команды для настройки LAMPAC
 # ...
