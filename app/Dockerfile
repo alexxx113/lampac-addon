@@ -18,7 +18,7 @@ RUN curl -fSL -k -o dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/aspnetc
 
 RUN mkdir -p /config/lampac
 #COPY --chown=hass:hass . /config/lampac
-COPY /config/lampac
+COPY . /config/lampac
 #COPY /alarmserver/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
 
