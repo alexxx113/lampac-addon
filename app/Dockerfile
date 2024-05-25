@@ -1,6 +1,5 @@
 FROM debian:12.5-slim
 
-#EXPOSE 9118
 EXPOSE 9119
 WORKDIR /home
 
@@ -16,22 +15,11 @@ RUN curl -fSL -k -o dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/aspnetc
     && tar -oxzf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz
 
-
-RUN mkdir -p /config/lampac
-#COPY --chown=hass:hass . /config/lampac
-COPY . /config/lampac
-#COPY /alarmserver/* /
-#RUN chmod a+x /alarmserver-linux-raspberry
-
-
 RUN curl -L -k -o publish.zip https://github.com/immisterio/Lampac/releases/latest/download/publish.zip \
     && unzip -o publish.zip && rm -f publish.zip && rm -rf merchant \
     && rm -rf runtimes/os* && rm -rf runtimes/win* && rm -rf runtimes/linux-arm runtimes/linux-arm64 runtimes/linux-musl-arm64 runtimes/linux-musl-x64 \
-    && mv Lampac.runtimeconfig.json /config/lampac
-RUN sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' /config/lampac/Lampac.runtimeconfig.json 
-
-
-
+    && touch isdocker && sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' Lampac.runtimeconfig.json
+	
 RUN curl -L -k -o minor.zip https://github.com/immisterio/Lampac/releases/latest/download/minor.zip && unzip -o minor.zip && rm -f minor.zip
 
 RUN mkdir -p torrserver && curl -L -k -o torrserver/TorrServer-linux https://github.com/YouROK/TorrServer/releases/latest/download/TorrServer-linux-amd64 \
@@ -39,9 +27,4 @@ RUN mkdir -p torrserver && curl -L -k -o torrserver/TorrServer-linux https://git
 
 RUN echo '{"puppeteer":{"executablePath":"/usr/bin/chromium"}}' > init.conf
 
-
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
-
-#COPY --chown=hass:hass init.conf /config/lampac
-COPY init.conf /config/lampac
-VOLUME /config/lampac
