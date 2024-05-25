@@ -22,12 +22,10 @@ COPY --chown=hass:hass . /config/lampac
 RUN curl -L -k -o publish.zip https://github.com/immisterio/Lampac/releases/latest/download/publish.zip \
     && unzip -o publish.zip && rm -f publish.zip && rm -rf merchant \
     && rm -rf runtimes/os* && rm -rf runtimes/win* && rm -rf runtimes/linux-arm runtimes/linux-arm64 runtimes/linux-musl-arm64 runtimes/linux-musl-x64 \
-    && mv Lampac.runtimeconfig.json /config/lampac \
-    && sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' /config/lampac/Lampac.runtimeconfig.json 
-
+    && mv Lampac.runtimeconfig.json /config/lampac
+RUN sed -i 's/\"System.GC.Server\"\: false/\"System.GC.Server\": true/g' /config/lampac/Lampac.runtimeconfig.json 
 
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
-
 
 COPY --chown=hass:hass init.conf /config/lampac
 
