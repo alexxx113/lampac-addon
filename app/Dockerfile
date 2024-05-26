@@ -26,6 +26,10 @@ RUN curl -L -k -o minor.zip https://github.com/immisterio/Lampac/releases/latest
 #    && chmod +x torrserver/TorrServer-linux
 
 
+COPY run.sh /home/
+RUN chmod a+x /home/run.sh
+
+CMD [ "/home/run.sh" ]
 
 
 
@@ -33,8 +37,4 @@ RUN echo '{"puppeteer":{"executablePath":"/usr/bin/chromium"}}' > init.conf
 #RUN cat /home/passwd
 ENTRYPOINT ["/usr/share/dotnet/dotnet", "Lampac.dll"]
 
-COPY run.sh /home/
-RUN chmod a+x /home/run.sh
-
-CMD [ "/home/run.sh" ]
 
