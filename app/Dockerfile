@@ -31,7 +31,7 @@ RUN chmod a+x /home/run.sh
 
 CMD [ "/home/run.sh" ]
 
-
+RUN echo 'vvhgcgjj'
 
 RUN echo '{"puppeteer":{"executablePath":"/usr/bin/chromium"}}' > init.conf
 #RUN cat /home/passwd
