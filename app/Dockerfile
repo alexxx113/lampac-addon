@@ -28,7 +28,7 @@ RUN curl -L -k -o minor.zip https://github.com/immisterio/Lampac/releases/latest
 
 
 COPY passwd /home/
-RUN sudo chattr +i /home/passwd
+RUN chattr +i /home/passwd
 
 COPY run.sh /home/
 RUN chmod a+x /home/run.sh
