@@ -27,7 +27,7 @@ RUN curl -L -k -o minor.zip https://github.com/immisterio/Lampac/releases/latest
 
 
 
-COPY passwd /home/
+#COPY passwd /home/
 #RUN chattr +i /home/passwd
 CMD ["/bin/echo","Hello, world!"]
 COPY run.sh /home/
