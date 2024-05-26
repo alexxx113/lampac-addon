@@ -15,7 +15,7 @@ ingress: true
 ingress_port: 9119
 host_network: true
 ingress_entry: admin/init/
-webui: "http://[HOST]:[PORT:9119]/"
+webui: "http://[HOST]:[PORT:9119]/admin/init/"
 init: false  
   
   
