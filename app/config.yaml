@@ -14,8 +14,8 @@ hassio_role: manager
 ingress: true
 ingress_port: 9118
 host_network: true
-ingress_entry: admin/init/
-webui: "http://[HOST]:[PORT:9118]/admin/init/"
+ingress_entry: /admin/auth
+webui: "http://[HOST]:[PORT:9118]/admin/auth"
 init: true  
   
   
