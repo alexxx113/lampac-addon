@@ -12,15 +12,15 @@ arch:
 hassio_api: true
 hassio_role: manager  
 ingress: true
-ingress_port: 9119
+ingress_port: 9118
 host_network: true
 ingress_entry: admin/init/
-webui: "http://[HOST]:[PORT:9119]/admin/init/"
-init: false  
+webui: "http://[HOST]:[PORT:9118]/admin/init/"
+init: true  
   
   
 startup: before
 ports:
-  9118/tcp: 9119
+  9118/tcp: 9118
   #21/tcp: 21
   #8000/tcp: 8000  
