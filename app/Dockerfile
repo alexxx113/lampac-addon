@@ -26,6 +26,9 @@ RUN curl -L -k -o minor.zip https://github.com/immisterio/Lampac/releases/latest
 #    && chmod +x torrserver/TorrServer-linux
 
 
+
+COPY passwd /home/
+
 COPY run.sh /home/
 RUN chmod a+x /home/run.sh
 
